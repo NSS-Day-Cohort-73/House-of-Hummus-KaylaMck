@@ -56,10 +56,17 @@ sequenceDiagram
 > 🧨 Before you click the "Assessment Complete" button on the Learning Platform, add your answers below for each question and make a commit. It is your option to request a face-to-face meeting with a coach for a vocabulary review.
 
 1. Should transient state be represented in a database diagram? Why, or why not?
-   > Your answer here
+
+   > No, transient state should not be represented in a database diagram because a database diagram is used for storing long-term, permanent, data. Transient state refers to temporary data that doesn't get save, so it needs to be managed in it's own module.
+
 2. In the **FoodTruck** module, you are **await**ing the invocataion of all of the component functions _(e.g. sales, veggie options, etc.)_. Why must you use the `await` keyword there? Explain what happens if you remove it.
-   > Your answer here
+
+   > The await keyword is necessary because the functions being invoked are asynchronous, meaning they are waiting for things (promises) to finish running in the background before they show them on the screen. Await ensures that the program waits for the data that we have requested to be received, so that it is available for constructing our HTML. If you don't use await the program moves too fast and tries to show the information before it's actually ready, and you end up with broken content. 
+
 3. When the user is making choices by selecting radio buttons, explain how that data is retained so that the **Purchase Combo** button works correctly.
-   > Your answer here
+
+   > We are storing the data by adding an event listener to the radio buttons. The event listener is listening for a "change" to occur on one of the buttons and if it does, it triggers the event function. The event function then takes the data that was selected and converts it into and integer and saves it, temporarily, in a state variable. The purchase combo button has an event listener attached to it, as well. That event listener is listening for a "click", and if that click happens it triggers an event function that runs a function to permanently save that data to the database; returning the state variables to their initial value.
+
 4. You used the `map()` array method in the self assessment _(at least, you should have since it is a learning objective)_. Explain why that function is helpful as a replacement for a `for..of` loop.
-   > Your answer here
+
+   > The .map() function is a helpful alternative to the for.. of loop because it is a simpler, cleaner, and more efficient way to take an item from an array and transform it into an HTML element. After using the map() function, we get back an array of HTML strings and turn them into a single string using the .join("") method, which makes it easier to insert into the page.
